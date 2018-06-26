@@ -12,7 +12,7 @@ from twilio.twiml.messaging_response import MessagingResponse
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'super-secret-key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:@localhost/davidpollock'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://eiblwaoqjyqhme:d4d5457567db38f933f9790ba3cde5fcefe9986de12dee65fc171b5ac49db804@ec2-54-235-70-127.compute-1.amazonaws.com:5432/d2glm64lqt34g3'
 db = SQLAlchemy(app)
 
 
