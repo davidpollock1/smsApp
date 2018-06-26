@@ -10,8 +10,8 @@ import os
 from twilio.twiml.messaging_response import MessagingResponse
 
 s3 = S3Connection(os.environ['auth_token'], os.environ['account_sid'])
-auth_token=auth_token
-account_sid=account_sid
+auth_token= os.environ.auth_token
+account_sid=os.environ.account_sid
 
 my_twilio = '+12486174847'
 
