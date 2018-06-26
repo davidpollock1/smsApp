@@ -8,7 +8,7 @@ from config import account_sid, auth_token
 
 from twilio.twiml.messaging_response import MessagingResponse
 
-my_twilio = '+12486174847'
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'super-secret-key'
@@ -67,7 +67,7 @@ def send_sms(message, contactNum):
 	return client.messages.create(
                             to=contactNum,
                             body=message,
-                            from_='my_twilio')
+                            from_='12486174847')
 
 
 
