@@ -4,7 +4,7 @@ from wtforms import StringField, IntegerField
 from wtforms.widgets import TextArea
 from twilio.rest import Client
 from flask_sqlalchemy import SQLAlchemy
-from config import account_sid, auth_token
+from config import account_sid, auth_token, DATABASE_URL
 
 from twilio.twiml.messaging_response import MessagingResponse
 
