@@ -5,7 +5,7 @@ from wtforms.widgets import TextArea
 from twilio.rest import Client
 from flask_sqlalchemy import SQLAlchemy
 from boto.s3.connection import S3Connection
-
+import os
 
 from twilio.twiml.messaging_response import MessagingResponse
 
