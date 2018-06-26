@@ -4,14 +4,9 @@ from wtforms import StringField, IntegerField
 from wtforms.widgets import TextArea
 from twilio.rest import Client
 from flask_sqlalchemy import SQLAlchemy
-from boto.s3.connection import S3Connection
-import os
+from config import account_sid, auth_token
 
 from twilio.twiml.messaging_response import MessagingResponse
-
-s3 = S3Connection(os.environ['auth_token'], os.environ['account_sid'])
-auth_token= os.environ.auth_token
-account_sid=os.environ.account_sid
 
 my_twilio = '+12486174847'
 
