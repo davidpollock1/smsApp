@@ -42,11 +42,12 @@ def sms_receive():
     # Start our TwiML response
     resp = MessagingResponse()
 
-    # Add a message
-    resp.message("The Robots are coming! Head for the hills!")
-    return str(resp)
     receive_number = request.form['From']
     receive_body = request.form['body']
+
+    # Add a message
+    resp.message(receive_number)
+    return str(resp)
     add = addReceived(receive_number, receive_body)
 
 
