@@ -42,11 +42,6 @@ def sms_receive():
     if request.method == 'POST':
         receive_number = request.form['From']
         receive_body = request.form['body']
-        resp = MessagingResponse()
-
-        # Add a message
-        resp.message(<response></response>)
-
         add = addReceived(receive_number, receive_body)
 
 
