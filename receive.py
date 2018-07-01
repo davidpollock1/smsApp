@@ -2,12 +2,7 @@ from flask import Flask, render_template
 from twilio.rest import Client
 from flask_sqlalchemy import SQLAlchemy
 from config import DATABASE_URL, SECRET_KEY
-
-app = Flask(__name__)
-app.config['SECRET_KEY'] = SECRET_KEY
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
-db = SQLAlchemy(app)
-
+from models import User
 
 @app.route("/sms", methods=['POST'], ['GET'])
 def sms_receive():
@@ -29,6 +24,3 @@ def add(message, number):
     db.session.add(receive_info)
     db.session.commit()
 
-
-if __name__ == '__main__':
-    app.run(debug=True)
