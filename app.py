@@ -39,7 +39,6 @@ def add(message, contactNum):
 
 @app.route('/sms', methods=['POST' ,'GET'])
 def sms_receive():
-    if request.method == 'POST':
         receive_number = request.form['From']
         receive_body = request.form['body']
         add = addReceived(receive_number, receive_body)
