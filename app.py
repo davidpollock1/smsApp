@@ -37,7 +37,7 @@ def add(message, contactNum):
     db.session.add(info)
     db.session.commit()
 
-@app.route("/sms", methods=['POST'])
+@app.route("/sms", methods=['POST'], ['GET'])
 def sms_receive():
     if request.method == 'POST':
         receive_number = request.form['From']
