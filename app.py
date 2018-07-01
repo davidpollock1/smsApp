@@ -39,9 +39,14 @@ def add(message, contactNum):
 
 @app.route('/sms', methods=['POST' ,'GET'])
 def sms_receive():
-        receive_number = request.form['From']
-        receive_body = request.form['body']
-        add = addReceived(receive_number, receive_body)
+    # Start our TwiML response
+    resp = MessagingResponse()
+
+    # Add a message
+    resp.message("The Robots are coming! Head for the hills!")
+    receive_number = request.form['From']
+    receive_body = request.form['body']
+    add = addReceived(receive_number, receive_body)
 
 
 # class for database model
