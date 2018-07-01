@@ -43,7 +43,7 @@ def sms_receive():
     resp = MessagingResponse()
 
     # Add a message
-    resp.message(request.form.['From'] + request.form['body'] )
+    resp.message('try')
     add = addReceived(request.form.['From'], request.form['body'])
     return str(resp)
 
