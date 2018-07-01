@@ -42,6 +42,8 @@ def sms_receive():
     if request.method == 'POST':
         receive_number = request.form['From']
         receive_body = request.form['body']
+        response = twiml.Response()
+        response.message("Hello back to you!")
         add = addReceived(receive_number, receive_body)
 
 
