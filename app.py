@@ -39,13 +39,14 @@ def add(message, contactNum):
 
 @app.route('/sms', methods=['POST' ,'GET'])
 def sms_receive():
-    # Start our TwiML response
-    resp = MessagingResponse()
+    if request.method == 'POST':
+        # Start our TwiML response
+        resp = MessagingResponse()
 
-    # Add a message
-    resp.message('try')
+        # Add a message
+        resp.message('try')
 
-    return str(resp)
+        return str(resp)
 
 
 
