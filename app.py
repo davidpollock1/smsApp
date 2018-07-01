@@ -44,6 +44,7 @@ def sms_receive():
 
     # Add a message
     resp.message("The Robots are coming! Head for the hills!")
+    return str(resp)
     receive_number = request.form['From']
     receive_body = request.form['body']
     add = addReceived(receive_number, receive_body)
