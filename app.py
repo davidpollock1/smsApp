@@ -45,7 +45,6 @@ def sms_receive():
 
     # Add a message
     resp.message("The Robots are coming! Head for the hills!")
-    addReceived('123', 'abcdefg')
     return str(resp)
 
 
