@@ -49,8 +49,8 @@ def sms_receive():
     # resp = twiml.response()
     #     # Add a message
     # resp.message('Hello {}, you said: {}'.format(received_number, received_message))
-
-    return str(resp)
+    #
+    # return str(resp)
 
 
 
