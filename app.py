@@ -43,7 +43,7 @@ def sms_receive():
     if request.method == 'POST':
         resp = MessagingResponse()
         resp.message("Hi {}, you said: {}".format(request.form['From'], request.form['Body']))
-        add_db = add('12345678','this is supposed to go in sms_info')
+        add_db = add('this is supposed to go to sms_info','123456')
         return str(resp)
 
 
