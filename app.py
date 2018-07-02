@@ -44,12 +44,12 @@ def sms_receive():
         received_message = request.form['body']
         add_db = addReceived(received_message, received_number)
 
-        # Start our TwiML response
-        resp = MessagingResponse()
-        # Add a message
-        resp.message('try')
-
-        return str(resp)
+        # # Start our TwiML response
+        # resp = MessagingResponse()
+        # # Add a message
+        # resp.message('try')
+        #
+        # return str(resp)
 
 
 
