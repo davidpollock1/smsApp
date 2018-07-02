@@ -41,13 +41,12 @@ def add(message, contactNum):
 @app.route('/sms', methods=['POST' ,'GET'])
 def sms_receive():
     if request.method == 'POST':
-        add_db = addReceived(request.form['From'], request.form['Body'])
-    # Start our TwiML response
-    resp = MessagingResponse()
+        # Start our TwiML response
+        resp = MessagingResponse()
 
-    # Add a message
-    resp.message("Hi {}, you said: {}".format(request.form['From'], request.form['Body']))
-    return str(resp)
+        # Add a message
+        resp.message("Hi {}, you said: {}".format(request.form['From'], request.form['Body']))
+        return str(resp)
 
 
 # class for database model
