@@ -5,6 +5,7 @@ from wtforms.widgets import TextArea
 from twilio.rest import Client
 from flask_sqlalchemy import SQLAlchemy
 from config import account_sid, auth_token, DATABASE_URL, SECRET_KEY
+from twilio import twiml
 
 from twilio.twiml.messaging_response import MessagingResponse
 
@@ -39,17 +40,15 @@ def add(message, contactNum):
 
 @app.route('/sms', methods=['POST' ,'GET'])
 def sms_receive():
-    if request.method == 'POST':
-        received_number = request.form['From']
-        received_message = request.form['body']
-        add_db = addReceived(received_message, received_number)
+    received_number = request.form['From']
+    received_message = request.form['Body']
+    # add_db = addReceived(received_message, received_number)
+        # Start our TwiML response
+    resp = twiml.response()
+        # Add a message
+    resp.message('Hello {}, you said: {}'.format(received_number, received_message))
 
-        # # Start our TwiML response
-        # resp = MessagingResponse()
-        # # Add a message
-        # resp.message('try')
-        #
-        # return str(resp)
+    return str(resp)
 
 
 
@@ -58,6 +57,7 @@ class receiveInfo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     receive_message = db.Column(db.String)
     receive_number = db.Column(db.BigInteger)
+
 
 
 # add to database and commit
