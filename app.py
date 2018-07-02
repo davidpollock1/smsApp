@@ -38,25 +38,18 @@ def add(message, contactNum):
     db.session.add(info)
     db.session.commit()
 
-# @app.route('/sms', methods=['POST' ,'GET'])
-# def sms_receive():
-#     received_number = request.form['From']
-#     received_message = request.form['Body']
-#     # add_db = addReceived(received_message, received_number)
-#         # Start our TwiML response
-#     resp = twiml.response()
-#         # Add a message
-#     resp.message('Hello {}, you said: {}'.format(received_number, received_message))
-#
-#     return str(resp)
+@app.route('/sms', methods=['POST' ,'GET'])
+def sms_receive():
+    if request.method='POST'
+        add_db = addReceived('720720', 'just adding to db')
+    # received_number = request.form['From']
+    # received_message = request.form['Body']
+    # add_db = addReceived(received_message, received_number)
+    #     # Start our TwiML response
+    # resp = twiml.response()
+    #     # Add a message
+    # resp.message('Hello {}, you said: {}'.format(received_number, received_message))
 
-@app.route('/sms', methods=['POST'])
-def sms():
-    number = request.form['From']
-    message_body = request.form['Body']
-
-    resp = twiml.Response()
-    resp.message('Hello {}, you said: {}'.format(number, message_body))
     return str(resp)
 
 
