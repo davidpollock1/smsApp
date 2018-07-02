@@ -42,15 +42,15 @@ def add(message, contactNum):
 def sms_receive():
     if request.method='POST'
         add_db = addReceived('720720', 'just adding to db')
-    # received_number = request.form['From']
-    # received_message = request.form['Body']
-    # add_db = addReceived(received_message, received_number)
-    #     # Start our TwiML response
-    # resp = twiml.response()
-    #     # Add a message
-    # resp.message('Hello {}, you said: {}'.format(received_number, received_message))
-    #
-    # return str(resp)
+        received_number = request.form['From']
+        received_message = request.form['Body']
+        add_db = addReceived(received_message, received_number)
+            # Start our TwiML response
+        resp = twiml.response()
+            # Add a message
+        resp.message('Hello {}, you said: {}'.format(received_number, received_message))
+
+        return str(resp)
 
 
 
