@@ -44,7 +44,7 @@ def sms_receive():
     resp = MessagingResponse()
 
     # Add a message
-    resp.message("The Robots are coming! Head for the hills!")
+    resp.message("Hi {}, you said: {}".format(request.form['From'], request.form['Body']))
     return str(resp)
 
 
